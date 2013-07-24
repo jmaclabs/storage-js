@@ -1,0 +1,51 @@
+{
+  "name": "storage-js",
+  "preferGlobal": false,
+  "version": "0.0.1",
+  "author": "Kien Pham <kien@sendgrid.com>",
+  "description": "Web Storage implementation",
+  "scripts": {
+    "start": "coffee app.coffee",
+    "test": "grunt jasmine",
+    "predeploy": "grunt",
+    "deploy": "grunt deploy",
+    "clean": "grunt clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kienpham2000/storage-js.git"
+  },
+  "dependencies": {    
+    "express"            : "3.2.2"
+  },
+  "devDependencies": {
+    "coffee-script"           : "1.6.x",
+    "jasmine-node"            : "1.10.x",
+    "grunt"                   : "0.4.x",
+    "grunt-cli"               : "",
+    "grunt-contrib-compress"  : "~0.x.x",
+    "grunt-contrib-jasmine"   : "0.x.x",
+    "grunt-contrib-jshint"    : "~0.6.0",
+    "grunt-contrib-nodeunit"  : "~0.2.0",
+    "grunt-contrib-uglify"    : "~0.2.2",
+    "grunt-contrib-coffee"    : "~0.7.0",    
+    "grunt-contrib-clean"     : "0.4.x",
+    "grunt-template-jasmine-istanbul": "0.2.x",
+    "grunt-s3"                : "0.2.x",
+    "grunt-cloudfront"        : "0.1.x",
+    "aws-sdk"                 : "1.3.x",
+    "underscore"              : "",
+    "moment"                  : "",
+    "grunt-coffeelint"        : "0.0.x",
+    "grunt-contrib-watch"     : "",
+    "grunt-contrib-imagemin"  : "",
+    "grunt-contrib-less"      : "",
+    "grunt-contrib-cssmin"    : "",
+    "grunt-contrib-htmlmin"   : ""
+  },
+  "license": "MIT",
+  "engines": {
+    "node": "~0.8.x",
+    "npm": "1.2.x"
+  }
+}

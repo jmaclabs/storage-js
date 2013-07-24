@@ -1,0 +1,65 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src = "http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
+  <!-- <script src = "http://d1fckn418vzhwz.cloudfront.net/storage-js.0.0.1.min.gz.js" type="text/javascript"></script> -->
+  <script src = "/js/storage-js.0.0.1.min.js" type="text/javascript"></script>
+  <script src = "/js/bootstrap.min.js" type="text/javascript"></script>
+  <!-- <script src = "/js/app.min.js" type="text/javascript"></script> -->
+  <link href="/css/bootstrap.min.css" rel='stylesheet' type='text/css'>
+  <!-- <link href="/css/app.min.css" rel='stylesheet' type='text/css'> -->
+</head>
+
+<body>
+  <div class="container">
+    <h1>storage-js example</h1>
+    
+    <div>
+      <button class="getStorage btn btn-primary">Get Storage</button>
+      <button class="setStorage btn">Set Storage</button>
+      <button class="clearStorage btn btn-warning">Clear Storage</button>
+    </div>
+    
+    <br /><br />
+    <textarea rows=10 id="message">
+      Some quick note...
+      
+    </textarea>
+  </div>
+  
+  <script>
+    storage = new StorageJS("localStorage");
+    
+    $(".getStorage").on("click", function(){
+      var now = new Date().getTime();
+      var note = storage.getItem("note");      
+      var timestamp = storage.getItem("timestamp");      
+      
+      if (note && timestamp)
+      {
+        alert("message: " + note + " \n Saved " + (now - timestamp) / 1000 + " seconds ago");
+      }
+      else
+      {
+        alert("no data");
+      }      
+    });
+
+    $(".setStorage").on("click", function(){
+      var message = $("#message").val();
+      storage.setItem("note", message);
+      storage.setItem("some_hashes", "3453453635345345dgf345235");
+      storage.setItem("timestamp", new Date().getTime());
+      alert("data saved to web storage!");
+    });
+
+    $(".clearStorage").on("click", function(){
+      storage.clear();
+      alert("web storage data cleared!");
+    });
+  </script>
+
+</body>
+
+</html>
